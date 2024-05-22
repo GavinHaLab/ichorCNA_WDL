@@ -19,6 +19,7 @@ The workflow outputs 8 files:
 - `~{sampleId}.RData`
 - `~{sampleId}.plots.tar.gz`
 
+
 ## ichorCNA Wiki Page
 For more info on the ichorCNA tool, visit the [Github Wiki page for ichorCNA](https://github.com/broadinstitute/ichorCNA/wiki) by the BROAD Institute.
 
