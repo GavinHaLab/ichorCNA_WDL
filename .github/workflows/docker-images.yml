@@ -6,6 +6,8 @@ on:
       - 'main'
   
   pull_request:
+    branches:
+      - 'main'
 
 permissions:
   contents: read
@@ -32,7 +34,7 @@ jobs:
           password: ${{ secrets.GAVINHALAB_DOCKERHUB_TOKEN }}
       -
         name: Build and Push
-        run: docker build --platform linux/amd64 -t gavinhalab/ichorcna:1.0.0 -f ichorCNA_docker/Dockerfile --push .
+        run: docker build --platform linux/amd64 -t gavinhalab/ichorcna:1.0.0 -f Docker/Dockerfile --push .
 
 
 
