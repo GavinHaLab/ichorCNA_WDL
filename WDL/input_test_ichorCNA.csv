@@ -1,0 +1,6 @@
+sampleName,tumorBam,tumorBai,normalBam,normalBai,sex,genomeBuild,genomeStyle
+Sample1,/path/to/tumorBam1,/path/to/tumorBai1,/path/to/normalBam1,/path/to/normalBai1,F,hg38,UCSC
+Sample2,/path/to/tumorBam2,/path/to/tumorBai2,/path/to/normalBam2,/path/to/normalBai2,M,hg38,UCSC
+Sample3,/path/to/tumorBam3,/path/to/tumorBai3,/path/to/normalBam3,/path/to/normalBai3,F,hg19,NCBI
+Sample4,/path/to/tumorBam4,/path/to/tumorBai4,/path/to/normalBam4,/path/to/normalBai4,M,hg38,UCSC
+Sample5,/path/to/tumorBam5,/path/to/tumorBai5,/path/to/normalBam5,/path/to/normalBai5,F,hg19,NCBI
