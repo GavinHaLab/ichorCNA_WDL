@@ -1,13 +1,13 @@
 {  
   "ichorCNA.batchSamples": [
     {
-      "sampleName": "17-043_cfSR_1138_ULP",
+      "sampleName": "",
       "sex": "None",      
-      "tumorBam": "/Users/pchandra/Desktop/17-043_cfSR_1138_ULP_recalibrated.bam",
-      "tumorBai": "/Users/pchandra/Desktop/17-043_cfSR_1138_ULP_recalibrated.bam.bai",
+      "tumorBam": "/path/to/tumor.bam",
+      "tumorBai": "/path/to/tumor.bam.bai",
       "normalBam": null,
       "normalBai": null,
-      "normalPanel": "/Users/pchandra/Desktop/HD_ULP_PoN_hg38_1Mb_normAutosomes_median.rds",
+      "normalPanel": "/path/to/HD_ULP_PoN_hg38_1Mb_normAutosomes_median.rds",
       "genomeBuild": "hg38", 
       "genomeStyle": "UCSC"
     }
