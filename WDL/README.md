@@ -72,10 +72,9 @@ A complete list of outputs can be found in [this Github wiki page](https://githu
 1) To run WDL on your machine, first you need to install [cromwell](https://github.com/broadinstitute/cromwell/releases/tag/85) or run it in a workspace that had Cromwell server configured already.
 2) The `inputs.json` file currently is created for one sample. To create one `inputs.json` file for multiple samples run:
 
-`python3 create_input_json.py input_test_ichorCNA.csv inputs.json`
+    python3 create_input_json.py input_test_ichorCNA.csv inputs.json
 
-This command creates a json file with all the samples present in the input _'input_test_ichorCNA.csv'_. Please check the format of the csv file.
-Next, pass the _'inputs.json'_ file to the following command.
+This command creates a json file with all the samples present in the input `input_test_ichorCNA.csv` . Please check the format of the csv file.
 
 ### Run mode
 To do this, enter this into your terminal:
