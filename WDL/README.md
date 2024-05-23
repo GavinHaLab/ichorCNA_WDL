@@ -70,7 +70,7 @@ A complete list of outputs can be found in [this Github wiki page](https://githu
 
 ## Instructions to setup WDL Pipeline
 1) Pull the docker image using :
-    `docker pull mskilab/jabba:1.0.0`
+    `docker pull gavinhalab/ichorcna:1.0.0`
 2) To run WDL on your machine, first you need to install [cromwell](https://github.com/broadinstitute/cromwell/releases/tag/85) or run it in a workspace thathas Cromwell server configured already.
 3) The `inputs.json` file currently is created for one sample. To create one `inputs.json` file for multiple samples run:
 
