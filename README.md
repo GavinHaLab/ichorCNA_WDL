@@ -1,2 +1,2 @@
 # ichorCNA_WDL_docker
-Has Dockerfile and WDL pipeline for ichorCNA
+The current version of the pipleine uses [ichorCNA:v0.5.0] (https://github.com/GavinHaLab/ichorCNA/releases/tag/v0.5.0).
