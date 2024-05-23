@@ -18,8 +18,8 @@ The workflow outputs 8 files:
 
 ## Configuration
 ### ichorCNA.wdl file
-`taskDocker`: By default fredhutch/ichorcna:v0.5.0 is set, and doesn't need to be changed unless you wish to.\
-`taskCPU`: CPU variable for run_ichorCNA. May have to edit `read_counter` CPU in its runtime section.\
+`taskDocker`: By default the WDL pipeline is curently usiing this [docker image] (gavinhalab/ichorcna:0.0.1)
+`taskCPU`: CPU variable for run_ichorCNA. May have to edit `read_counter` CPU in its runtime section.
 `memory`: This may have to be edited in both `read_counter` and `run_ichorCNA` in their runtime sections.
 
 ### inputs.json file
@@ -69,13 +69,13 @@ Workflow level params
 A complete list of outputs can be found in [this Github wiki page](https://github.com/broadinstitute/ichorCNA/wiki/Output) along with parameter info.
 
 ## Instructions
-[For FH users here](#instructions-for-fh-users)
+1) To run WDL on your machine, first you need to install [cromwell](https://github.com/broadinstitute/cromwell/releases/tag/85) or run it in a workspace that had Cromwell server configured already.
+2) The `inputs.json` file currently is created for one sample. To create one `inputs.json` file for multiple samples run:
 
-Else:
-You can run it if your workplace already has a Cromwell server configured or by other WDL execution tools.
+`python3 create_input_json.py input_test_ichorCNA.csv inputs.json`
 
-This is just a rough explanation of what I've tested this with and how you can do it yourself, from a beginner's perspective.
-You can run this on your own if you have [cromwell installed](https://github.com/broadinstitute/cromwell/releases/tag/85) and want to use the `run` or `server` mode.
+This command creates a json file with all the samples present in the input _'input_test_ichorCNA.csv'_. Please check the format of the csv file.
+Next, pass the _'inputs.json'_ file to the following command.
 
 ### Run mode
 To do this, enter this into your terminal:
@@ -84,14 +84,16 @@ To do this, enter this into your terminal:
 
 with `XX` being the version of cromwell you have. Make sure all of your files (WDL, input, options) are in the same folder as the cromwell .jar file.
 
+To configure the workflow, add `--options workflow_options.json` to the line. [More on workflow options](https://github.com/GavinHaLab/WDL_Pipelines/tree/main/workflow-options).
+
 ### Server mode
 [Here is a tutorial on how to run Cromwell's server mode](https://cromwell.readthedocs.io/en/stable/tutorials/ServerMode/). Skip the Five Minute Introduction if you've already downloaded Cromwell and familiar with it.
 
 ## Instructions for FH users
+
 ### Running via shiny app
 
 Open the [shiny app](https://cromwellapp.fredhutch.org/) and connect to your cromwell server. Under "Submit a Workflow", upload the WDL and inputs.json. If you wanted to configure the workflow, [take a workflow options file](https://github.com/GavinHaLab/WDL_Pipelines/tree/main/workflow-options) and upload it as well.
-
 
 ### Running via command line
 Log into your chosen node and set the current directory to where your ichorCNA.wdl, inputs.json, and your optional workflow_options.json files are stored. Load the modules necessary:
@@ -102,11 +104,5 @@ Log into your chosen node and set the current directory to where your ichorCNA.w
 
 #### To execute the WDL, do the following:
 
-`python3 create_input_json.py input_test_ichorCNA.csv inputs.json`
-
-This command creates a json file with all the samples present in the input _'input_test_ichorCNA.csv'_. Please check the format of the csv file.
-Next, pass the _'inputs.json'_ file to the following command.
-
 `java -jar $EBROOTCROMWELL/cromwell.jar run ichorCNA.wdl -i inputs.json`
-
 To configure the workflow, add `--options workflow_options.json` to the line. [More on workflow options](https://github.com/GavinHaLab/WDL_Pipelines/tree/main/workflow-options).
