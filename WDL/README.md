@@ -1,8 +1,5 @@
 # ichorCNA-wdl
-WDL for https://github.com/GavinHaLab/ichorCNA. \
-A revised version of [this WDL](https://github.com/GavinHaLab/wdl-repo/tree/main/ichorCNA/old/) so that it outputs plots.
-[Here is info on a snakemake version](https://github.com/broadinstitute/ichorCNA/wiki/SnakeMake-pipeline-for-ichorCNA) for comparison. 
-
+ 
 The ichorCNA.wdl workflow has two tasks:
 - `read_counter`
 - `run_ichorCNA`
@@ -18,10 +15,6 @@ The workflow outputs 8 files:
 - `~{sampleId}.seg`
 - `~{sampleId}.RData`
 - `~{sampleId}.plots.tar.gz`
-
-
-## ichorCNA Wiki Page
-For more info on the ichorCNA tool, visit the [Github Wiki page for ichorCNA](https://github.com/broadinstitute/ichorCNA/wiki) by the BROAD Institute.
 
 ## Configuration
 ### ichorCNA.wdl file
