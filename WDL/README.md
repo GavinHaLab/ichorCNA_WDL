@@ -18,7 +18,7 @@ The workflow outputs 8 files:
 
 ## Configuration
 ### ichorCNA.wdl file
-`taskDocker`: By default the WDL pipeline is curently usiing this [docker image] (gavinhalab/ichorcna:0.0.1)
+`taskDocker`: By default the WDL pipeline is curently using this `gavinhalab/ichorcna:0.0.1`
 `taskCPU`: CPU variable for run_ichorCNA. May have to edit `read_counter` CPU in its runtime section.
 `memory`: This may have to be edited in both `read_counter` and `run_ichorCNA` in their runtime sections.
 
@@ -68,11 +68,13 @@ Workflow level params
 ## Outputs
 A complete list of outputs can be found in [this Github wiki page](https://github.com/broadinstitute/ichorCNA/wiki/Output) along with parameter info.
 
-## Instructions
-1) To run WDL on your machine, first you need to install [cromwell](https://github.com/broadinstitute/cromwell/releases/tag/85) or run it in a workspace that had Cromwell server configured already.
-2) The `inputs.json` file currently is created for one sample. To create one `inputs.json` file for multiple samples run:
+## Instructions to setup WDL Pipeline
+1) Pull the docker image using :
+    `docker pull mskilab/jabba:1.0.0`
+2) To run WDL on your machine, first you need to install [cromwell](https://github.com/broadinstitute/cromwell/releases/tag/85) or run it in a workspace thathas Cromwell server configured already.
+3) The `inputs.json` file currently is created for one sample. To create one `inputs.json` file for multiple samples run:
 
-    python3 create_input_json.py input_test_ichorCNA.csv inputs.json
+    `python3 create_input_json.py input_test_ichorCNA.csv inputs.json`
 
 This command creates a json file with all the samples present in the input `input_test_ichorCNA.csv` . Please check the format of the csv file.
 
