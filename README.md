@@ -1,6 +1,6 @@
 # WDL pipeline for ichorCNA
 
-![Github](https://github.com/GavinHaLab/ichorCNA_WDL/assets/40443942/5423ed9d-4843-4f8d-8798-700ad9428bb7)
+![Github] (https://github.com/GavinHaLab/ichorCNA_WDL/assets/40443942/5423ed9d-4843-4f8d-8798-700ad9428bb7)
 
 The current version of the pipleine uses [ichorCNA:v0.5.0](https://github.com/GavinHaLab/ichorCNA/releases/tag/v0.5.0) and docker image `gavinhalab/ichorcna:1.0.0` found on [DockerHub](https://hub.docker.com/repository/docker/gavinhalab/ichorcna/general)
 
