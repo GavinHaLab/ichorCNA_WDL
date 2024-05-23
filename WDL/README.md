@@ -106,4 +106,4 @@ Log into your chosen node and set the current directory to where your ichorCNA.w
 #### To execute the WDL, do the following:
 
 `java -jar $EBROOTCROMWELL/cromwell.jar run ichorCNA.wdl -i inputs.json`
-To configure the workflow, add `--options workflow_options.json` to the line. [More on workflow options](https://github.com/GavinHaLab/WDL_Pipelines/tree/main/workflow-options).
+
