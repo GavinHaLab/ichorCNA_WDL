@@ -7,7 +7,7 @@ struct sampleData {
   File tumorBai 
   File? normalBam 
   File? normalBai
-  File normalPanel  # this is listed as a string for a path when it's a file found in the ichor container, but if it's an external file, it needs to be changed to a type File?
+  File normalPanel  # Use 'File' if an external file is required else use 'String' if no Panel of Normal is required. 
   String genomeBuild # hg38 or hg19, only, capitalization matters
   String genomeStyle  #"NCBI" # or NCBI, only
 }
