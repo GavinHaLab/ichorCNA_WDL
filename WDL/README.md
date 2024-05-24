@@ -33,7 +33,7 @@ All sample information including any paired normal bams, or a normal panel, and 
 "`tumorBai`"- Path to tumor bam.bai file.  
 "`normalBam`"- Path to normal bam file. Can be null  
 "`normalBai`"- Path to normal bam.bai file. Can be null  
-"`normalPanel`"- Median corrected depth from panel of normals. Default: null.
+"`normalPanel`"- Median corrected depth from panel of normals. Can specify the path to the file based on the genome used. Default: null.
 "`genomeBuild`"- hg19 or hg38 only, capitalization matters  
 "`genomeStyle`"- "NCBI" when hg19 or "UCSC" when hg38
 
