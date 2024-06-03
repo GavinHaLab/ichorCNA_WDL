@@ -1,0 +1,12 @@
+{
+    "workflow_failure_mode": "ContinueWhilePossible",
+    "final_workflow_outputs_dir": "/path/to/results/",
+    "use_relative_output_paths": true,
+    "final_workflow_log_dir": "/path/to/logs/",
+    "final_call_logs_dir": "/path/to/logs/",
+    "write_to_cache": true,
+    "read_from_cache": true
+}
+
+
+
