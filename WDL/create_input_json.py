@@ -25,7 +25,7 @@ def output_json_file(input_csv, output_json, json_name, **fixed_paramteres):
 
 # fixed paramters
 json_name = 'ichorCNA.batchSamples'
-fixed_paramteres = {"ichorCNA.exons": None, 
+fixed_paramteres = {"ichorCNA.exons": null, 
                     "ichorCNA.binSize": "1000kb",
                     "ichorCNA.binSizeNumeric": 1000000,
                     "ichorCNA.qual": 20,
