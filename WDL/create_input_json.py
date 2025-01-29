@@ -8,6 +8,7 @@ def convert_csv_to_dictionary(input_csv):
     with open(input_csv, 'r') as file:
         csv_reader = csv.DictReader(file)
         for row in csv_reader:
+            row = {key: (value if value != "" else None) for key, value in row.items()}
             data.append(row)
     return data
 
@@ -25,7 +26,7 @@ def output_json_file(input_csv, output_json, json_name, **fixed_paramteres):
 
 # fixed paramters
 json_name = 'ichorCNA.batchSamples'
-fixed_paramteres = {"ichorCNA.exons": null, 
+fixed_paramteres = {"ichorCNA.exons": "null",
                     "ichorCNA.binSize": "1000kb",
                     "ichorCNA.binSizeNumeric": 1000000,
                     "ichorCNA.qual": 20,
@@ -50,6 +51,7 @@ fixed_paramteres = {"ichorCNA.exons": null,
                     "ichorCNA.fracReadsInChrYForMale": 0.002
                     }
 
+fixed_paramteres = {key: (None if value == "null" else value) for key, value in fixed_paramteres.items()}
 
 def main(input_csv, output_json):
     output_json_file(input_csv, output_json, json_name, **fixed_paramteres)
