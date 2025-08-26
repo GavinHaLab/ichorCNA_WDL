@@ -15,10 +15,17 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Download and build hmmcopy_utils
+#RUN wget -O hmmcopy_utils.zip https://github.com/shahcompbio/hmmcopy_utils/archive/29a8d1d.zip && \
+#    unzip hmmcopy_utils.zip && \
+#    cd hmmcopy_utils-* && \
+#    cmake . && make
+
 RUN wget -O hmmcopy_utils.zip https://github.com/shahcompbio/hmmcopy_utils/archive/29a8d1d.zip && \
     unzip hmmcopy_utils.zip && \
     cd hmmcopy_utils-* && \
-    cmake . && make
+    cmake . && make && make install && \
+    ldconfig
+    
 
 # Install Bioconductor packages
 RUN R -e "install.packages('BiocManager', dependencies=TRUE, repos='http://cran.rstudio.com/')" && \
