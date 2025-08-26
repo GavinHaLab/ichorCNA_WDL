@@ -1,22 +1,22 @@
-# Use a more recent Rocker base to avoid outdated mirrors
+# Use a recent Rocker base image
 FROM rocker/r-ver:4.2.2
 
 # Install system dependencies in one layer
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
+        build-essential \
         cmake \
         libcurl4-openssl-dev \
         libssl-dev \
         libxml2-dev \
         unzip \
-        wget \
-        build-essential && \
+        wget && \
     rm -rf /var/lib/apt/lists/*
 
 # Download and build hmmcopy_utils
-RUN wget https://github.com/shahcompbio/hmmcopy_utils/archive/29a8d1d.zip && \
-    unzip 29a8d1d.zip && \
-    cd hmmcopy_utils-29a8d1d18dfd301600d5d91832e5fe231935058c && \
+RUN wget -O hmmcopy_utils.zip https://github.com/shahcompbio/hmmcopy_utils/archive/29a8d1d.zip && \
+    unzip hmmcopy_utils.zip && \
+    cd hmmcopy_utils-* && \
     cmake . && make
 
 # Install Bioconductor packages
@@ -30,10 +30,9 @@ RUN R -e "install.packages(c('foreach', 'data.table', 'doMC', 'ggplot2', 'string
 RUN R -e "remotes::install_github('GavinHaLab/ichorCNA@v0.5.0', dependencies = TRUE)"
 
 # Download support data for ichorCNA
-RUN wget https://github.com/GavinHaLab/ichorCNA/archive/refs/tags/v0.6.0.zip && \
-    unzip v0.6.0.zip && \
+RUN wget -O ichorCNA.zip https://github.com/GavinHaLab/ichorCNA/archive/refs/tags/v0.6.0.zip && \
+    unzip ichorCNA.zip && \
     mv ichorCNA-0.6.0/ ichorCNA/
 
 # Set default shell
 CMD ["/bin/bash"]
-
