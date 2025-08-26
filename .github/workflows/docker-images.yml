@@ -30,7 +30,7 @@ jobs:
           password: ${{ secrets.GAVINHALAB_DOCKERHUB_TOKEN }}
       -
         name: Build and Push
-        run: docker build --platform linux/amd64 -t gavinhalab/ichorcna:1.0.0 -f Docker/Dockerfile --push .
+        run: docker build --platform linux/amd64 -t gavinhalab/ichorcna:3.0.0 -f Docker/Dockerfile --push .
 
 
 
