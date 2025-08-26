@@ -18,7 +18,7 @@ The workflow outputs 8 files:
 
 ## Configuration
 ### ichorCNA.wdl file
-`taskDocker`: By default the WDL pipeline is curently using this `gavinhalab/ichorcna:0.0.1`\
+`taskDocker`: By default the WDL pipeline is curently using this `gavinhalab/ichorcna:3.0.0`\
 `taskCPU`: CPU variable for run_ichorCNA. May have to edit `read_counter` CPU in its runtime section.\
 `memory`: This may have to be edited in both `read_counter` and `run_ichorCNA` in their runtime sections.
 
