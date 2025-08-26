@@ -10,7 +10,8 @@ RUN apt-get update && \
         libssl-dev \
         libxml2-dev \
         unzip \
-        wget && \
+        wget \
+        zlib1g-dev && \
     rm -rf /var/lib/apt/lists/*
 
 # Download and build hmmcopy_utils
