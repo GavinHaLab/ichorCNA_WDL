@@ -1,9 +1,12 @@
 FROM rocker/r-base:4.2.2
 
-RUN apt-get update --fix-missing -y
-RUN apt-get install -y cmake
-RUN apt-get install -y libcurl4-openssl-dev libssl-dev
+#RUN apt-get update --fix-missing -y
+#RUN apt-get install -y cmake
+#RUN apt-get install -y libcurl4-openssl-dev libssl-dev
 
+RUN apt-get update --fix-missing && \
+    apt-get install -y cmake libcurl4-openssl-dev libssl-dev && \
+    rm -rf /var/lib/apt/lists/*
 
 ## because there is no release to tether to, pick today's most recent commit.  Done 1/31/2022
 RUN wget https://github.com/shahcompbio/hmmcopy_utils/archive/29a8d1d.zip && unzip 29a8d1d.zip 
