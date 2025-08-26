@@ -26,12 +26,13 @@ RUN R -e "install.packages('BiocManager', dependencies=TRUE, repos='http://cran.
 RUN R -e "install.packages(c('foreach', 'data.table', 'doMC', 'ggplot2', 'strings','remotes'), dependencies=TRUE, repos='http://cran.rstudio.com/')"
 
 # Install ichorCNA from GitHub
-RUN R -e "remotes::install_github('GavinHaLab/ichorCNA@v0.5.0', dependencies = TRUE)"
+RUN R -e "remotes::install_github('GavinHaLab/ichorCNA@v0.6.0', dependencies=TRUE)"
 
 # Download support data for ichorCNA
 RUN wget -O ichorCNA.zip https://github.com/GavinHaLab/ichorCNA/archive/refs/tags/v0.6.0.zip && \
     unzip ichorCNA.zip && \
-    mv ichorCNA-0.6.0/ ichorCNA/
-
+    R CMD INSTALL ichorCNA-0.6.0 && \
+    rm -rf ichorCNA.zip ichorCNA-0.6.0
+    
 # Set default shell
 CMD ["/bin/bash"]
