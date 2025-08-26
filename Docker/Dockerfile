@@ -15,18 +15,9 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Download and build hmmcopy_utils
-#RUN wget -O hmmcopy_utils.zip https://github.com/shahcompbio/hmmcopy_utils/archive/29a8d1d.zip && \
-#    unzip hmmcopy_utils.zip && \
-#    cd hmmcopy_utils-* && \
-#    cmake . && make
-
-RUN wget -O hmmcopy_utils.zip https://github.com/shahcompbio/hmmcopy_utils/archive/29a8d1d.zip && \
-    unzip hmmcopy_utils.zip && \
-    cd hmmcopy_utils-* && \
-    cmake . && make && make install && \
-    ldconfig
+RUN wget https://github.com/shahcompbio/hmmcopy_utils/archive/29a8d1d.zip && unzip 29a8d1d.zip 
+RUN cmake ./hmmcopy_utils-29a8d1d18dfd301600d5d91832e5fe231935058c && make
     
-
 # Install Bioconductor packages
 RUN R -e "install.packages('BiocManager', dependencies=TRUE, repos='http://cran.rstudio.com/')" && \
     R -e "BiocManager::install(c('HMMcopy','GenomicRanges','GenomeInfoDb','BSgenome.Hsapiens.UCSC.hg19','BSgenome.Hsapiens.UCSC.hg38'), ask=FALSE, version='3.16')"
