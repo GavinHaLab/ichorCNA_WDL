@@ -24,7 +24,7 @@ RUN R -e "install.packages(c('foreach', 'data.table','doMC', 'ggplot2', 'strings
 # Install from github
 RUN R -e "remotes::install_github('GavinHaLab/ichorCNA@v0.5.0', dependencies = TRUE)"
 # Download support data
-RUN wget https://github.com/GavinHaLab/ichorCNA/archive/refs/tags/v0.5.0.zip && unzip v0.5.0.zip && mv ichorCNA-0.5.0/ ichorCNA/
+RUN wget https://github.com/GavinHaLab/ichorCNA/archive/refs/tags/v0.6.0.zip && unzip v0.6.0.zip && mv ichorCNA-0.6.0/ ichorCNA/
 
 # Override the R CMD for workflow managers
 CMD ["/bin/bash"]
