@@ -18,7 +18,7 @@ The workflow outputs 8 files:
 
 ## Configuration
 ### ichorCNA.wdl file
-`taskDocker`: By default the WDL pipeline is curently using this `gavinhalab/ichorcna:3.0.0`\
+`taskDocker`: By default the WDL pipeline is curently using this `gavinhalab/ichorcna:2.0.0`\
 `taskCPU`: CPU variable for run_ichorCNA. May have to edit `read_counter` CPU in its runtime section.\
 `memory`: This may have to be edited in both `read_counter` and `run_ichorCNA` in their runtime sections.
 
@@ -70,7 +70,7 @@ A complete list of outputs can be found in [this Github wiki page](https://githu
 
 ## Instructions to setup WDL Pipeline
 1) Pull the docker image using :
-    `docker pull gavinhalab/ichorcna:3.0.0`
+    `docker pull gavinhalab/ichorcna:2.0.0`
 2) To run WDL on your machine, first you need to install [cromwell](https://github.com/broadinstitute/cromwell/releases/tag/85) or run it in a workspace thathas Cromwell server configured already.
 3) The `inputs.json` file currently is created for one sample. To create one `inputs.json` file for multiple samples run:
 
