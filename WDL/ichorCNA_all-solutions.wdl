@@ -44,7 +44,7 @@ workflow ichorCNA {
 
   }
     ## Workflow and docker level params
-    String ichorDocker = "gavinhalab/ichorcna:2.0.0"
+    String ichorDocker = "gavinhalab/ichorcna:3.0.0"
     
     Array[String] ucscChrs = ["chr1", "chr2", "chr3", "chr4", "chr5", "chr6", "chr7", 
                            "chr8", "chr9", "chr10", "chr11", "chr12", "chr13", "chr14", 
