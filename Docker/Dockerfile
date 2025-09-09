@@ -70,10 +70,10 @@ CMD ["R", "-e", "library(ichorCNA); message('ichorCNA loaded successfully!')"]
 # ------------------------------------------------------------
 # Stage 4:
 # ------------------------------------------------------------
-RUN wget https://github.com/shahcompbio/hmmcopy_utils/archive/29a8d1d.zip && unzip 29a8d1d.zip 
+RUN wget https://github.com/shahcompbio/hmmcopy_utils/archive/29a8d1d.zip && unzip 29a8d1d.zip && rm 29a8d1d.zip
 RUN cmake ./hmmcopy_utils-29a8d1d18dfd301600d5d91832e5fe231935058c && make
 
 # ------------------------------------------------------------
 # Stage 5:
 # ------------------------------------------------------------
-RUN wget https://github.com/GavinHaLab/ichorCNA/archive/refs/tags/v0.6.0.zip && unzip v0.6.0.zip && mv ichorCNA-0.6.0/ ichorCNA/
+RUN wget https://github.com/GavinHaLab/ichorCNA/archive/refs/tags/v0.6.0.zip && unzip v0.6.0.zip && mv ichorCNA-0.6.0/ ichorCNA/ && rm v0.6.0.zip
